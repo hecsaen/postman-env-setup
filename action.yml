@@ -11,7 +11,7 @@ inputs:
   target_environment:
     description: 'The id of the Target environment to update.'
 runs:
-  using: ubuntu-latest
+  using: "composite"
   steps:
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -22,6 +22,7 @@ runs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install requests
+      shell: bash
 
     - name: Run script
       env:
@@ -32,3 +33,4 @@ runs:
       run: |
         echo "Running Postman environment update script..."
         python ./src/action.py 
+      shell: bash
