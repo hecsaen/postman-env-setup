@@ -12,11 +12,7 @@ inputs:
     description: 'The id of the Target environment to update.'
 runs:
   using: "composite"
-  steps:
-  
-    - name: Check out to repo
-      uses: actions/checkout@v2
-      
+  steps:      
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -27,9 +23,14 @@ runs:
         python -m pip install --upgrade pip
         python -m pip install requests
       shell: bash
+
+    
+    - name: Check out to repo
+      uses: actions/checkout@v4
     - name: List files
       run: ls -R
       shell: bash
+
     - name: Run script
       env:
         POSTMAN_API_KEY: ${{ inputs.POSTMAN_API_KEY }}
