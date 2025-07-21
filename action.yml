@@ -3,13 +3,13 @@ description: 'Merges the values from a public and a private environment in order
 
 inputs:
   public_environment:
-    description: 'The name of the variable to update.'
+    description: 'The id of the Public environment to get the public variables from.'
     required: true
   secret_environment:
-    description: 'The value to set for the variable.'
+    description: 'The id of the Secret environment to update, containing the secrets to be injected on the dest env.'
     required: true
   target_environment:
-    description: ''
+    description: 'The id of the Target environment to update.'
 runs:
   using: "composite"
   steps:
@@ -25,7 +25,6 @@ runs:
 
     - name: Run script
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
         POSTMAN_ENV_PUBLIC: ${{ inputs.public_environment }}
         POSTMAN_ENV_SECRET: ${{ inputs.secret_environment }}
