@@ -14,9 +14,9 @@ runs:
   using: "composite"
   steps:      
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.8'
+        python-version: '3.10'
 
     - name: Install dependencies
       run: |
@@ -27,11 +27,9 @@ runs:
     
     - name: Check out to repo
       uses: actions/checkout@v4
-    - name: List files
-      run: ls -R
-      shell: bash
 
     - name: Run script
+      uses: ./
       env:
         POSTMAN_API_KEY: ${{ inputs.POSTMAN_API_KEY }}
         POSTMAN_ENV_PUBLIC: ${{ inputs.public_environment }}
@@ -39,5 +37,5 @@ runs:
         POSTMAN_ENV_TARGET: ${{ inputs.target_environment }}
       run: |
         echo "Running Postman environment update script..."
-        python ./src/action.py 
+        python src/action.py 
       shell: bash
