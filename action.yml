@@ -11,7 +11,7 @@ inputs:
   target_environment:
     description: 'The id of the Target environment to update.'
 runs:
-  using: "composite"
+  using: ubuntu-latest
   steps:
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -25,7 +25,7 @@ runs:
 
     - name: Run script
       env:
-        POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
+        POSTMAN_API_KEY: ${{ inputs.POSTMAN_API_KEY }}
         POSTMAN_ENV_PUBLIC: ${{ inputs.public_environment }}
         POSTMAN_ENV_SECRET: ${{ inputs.secret_environment }}
         POSTMAN_ENV_TARGET: ${{ inputs.target_environment }}
