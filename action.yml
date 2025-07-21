@@ -27,12 +27,13 @@ runs:
     
     - name: Check out to repo
       uses: actions/checkout@v4
-      
+
     - name: Print current working directory
       run: pwd
       shell: bash
 
     - name: Run script
+      working-directory: ./
       env:
         POSTMAN_API_KEY: ${{ inputs.POSTMAN_API_KEY }}
         POSTMAN_ENV_PUBLIC: ${{ inputs.public_environment }}
