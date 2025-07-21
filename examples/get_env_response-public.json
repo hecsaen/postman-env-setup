@@ -1,0 +1,25 @@
+{
+    "environment": {
+        "id": "76519bb8-9d10-449a-8a22-4634a6a7bba3",
+        "name": "Test",
+        "owner": "46440423",
+        "createdAt": "2025-07-04T14:08:33.000Z",
+        "updatedAt": "2025-07-04T17:43:34.000Z",
+        "values": [
+            {
+                "key": "example-secret",
+                "value": "to-be-filled-by-env",
+                "enabled": true,
+                "type": "secret"
+            },
+            {
+                "key": "example-host",
+                "value": "gugul.com",
+                "enabled": true,
+                "type": "default"
+            }
+        ],
+        "uid": "46440423-76519bb8-9d10-449a-8a22-4634a6a7bba3",
+        "isPublic": false
+    }
+}
