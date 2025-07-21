@@ -23,7 +23,9 @@ runs:
         python -m pip install --upgrade pip
         python -m pip install requests
       shell: bash
-
+    - name: List files
+      run: ls -R
+      shell: bash
     - name: Run script
       env:
         POSTMAN_API_KEY: ${{ inputs.POSTMAN_API_KEY }}
