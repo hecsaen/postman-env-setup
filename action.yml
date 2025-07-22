@@ -31,6 +31,10 @@ runs:
     - name: Print current working directory
       run: pwd
       shell: bash
+    
+    - name: List files in the action directory
+      run: ls -R
+      shell: bash
 
     - name: Print 
       run: |
