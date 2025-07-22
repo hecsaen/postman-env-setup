@@ -26,7 +26,6 @@ runs:
 
     - name: Run python script
       env:
-        #POSTMAN_API_KEY: ${{ inputs.POSTMAN_API_KEY }}
         POSTMAN_ENV_PUBLIC: ${{ inputs.public_environment }}
         POSTMAN_ENV_SECRET: ${{ inputs.secret_environment }}
         POSTMAN_ENV_TARGET: ${{ inputs.target_environment }}
@@ -34,11 +33,6 @@ runs:
         import json
         import os
         import requests
-
-        print("----")
-        for key, value in os.environ.items():
-          print(f'{key}: {value}')
-        print("----")
 
         ENV_PUBLIC = os.getenv("POSTMAN_ENV_PUBLIC")
         ENV_SECRET = os.getenv("POSTMAN_ENV_SECRET")
@@ -55,7 +49,6 @@ runs:
                 raise Exception(message)
             return response.json()
             
-
         env_public = get_environment(ENV_PUBLIC)
         env_secret = get_environment(ENV_SECRET)
         env_target = get_environment(ENV_TARGET)
@@ -71,7 +64,6 @@ runs:
                     target_values.append(origin_value)
 
             return target_values
-
 
         merged_values = merge_values(env_public["environment"]["values"], env_secret["environment"]["values"])
 
