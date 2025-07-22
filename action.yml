@@ -24,8 +24,7 @@ runs:
         python -m pip install requests
       shell: bash
 
-    - name: Run script
-      # working-directory: ./
+    - name: Run python script
       env:
         #POSTMAN_API_KEY: ${{ inputs.POSTMAN_API_KEY }}
         POSTMAN_ENV_PUBLIC: ${{ inputs.public_environment }}
@@ -37,7 +36,8 @@ runs:
         import requests
 
         print("----")
-        print(os.environ)
+        for key, value in os.environ.items():
+          print(f'{key}: {value}')
         print("----")
 
         ENV_PUBLIC = os.getenv("POSTMAN_ENV_PUBLIC")
