@@ -35,7 +35,7 @@ runs:
     - name: Print 
       run: |
         ls /home/runner/work/
-        ls /home/runner/work/_actions
+        ls -R /home/runner/work/_actions
       shell: bash
 
     - name: Run script
