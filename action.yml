@@ -44,6 +44,9 @@ runs:
         ls /home/runner/work/
       shell: bash
 
+    - name: Print envs
+      run: env 
+      shell: bash
 
     - name: Run script
       # working-directory: ./
