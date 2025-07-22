@@ -9,6 +9,8 @@ ENV_TARGET = os.getenv("POSTMAN_ENV_TARGET")
 API_KEY = os.getenv("POSTMAN_APIKEY")
 HEADERS={"X-API-Key": API_KEY}
 
+print(os.environ())
+
 def get_environment(environment_id):
     response = requests.get(f"https://api.getpostman.com/environments/{environment_id}", headers=HEADERS)
     if response.status_code != 200:
