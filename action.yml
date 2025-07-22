@@ -33,11 +33,13 @@ runs:
       shell: bash
 
     - name: Print 
-      run: ls /home/runner/work/
+      run: |
+        ls /home/runner/work/
+        ls /home/runner/work/_actions
       shell: bash
 
     - name: Run script
-      working-directory: ./
+      # working-directory: ./
       env:
         POSTMAN_API_KEY: ${{ inputs.POSTMAN_API_KEY }}
         POSTMAN_ENV_PUBLIC: ${{ inputs.public_environment }}
