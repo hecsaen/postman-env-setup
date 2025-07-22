@@ -9,7 +9,7 @@ ENV_TARGET = os.getenv("POSTMAN_ENV_TARGET")
 API_KEY = os.getenv("POSTMAN_APIKEY")
 HEADERS={"X-API-Key": API_KEY}
 
-print(os.environ())
+print(os.en)
 
 def get_environment(environment_id):
     response = requests.get(f"https://api.getpostman.com/environments/{environment_id}", headers=HEADERS)
@@ -43,4 +43,4 @@ response = requests.put(f"https://api.getpostman.com/environments/{ENV_TARGET}",
 if 200 == response.status_code:
     print(f"Environment '{env_target['environment']['name']}' updated successfully.")
 else:
-    raise Exception(f"Environment was not updated: {json.dumps(response.json(), indent=2)}")
+    raise Exception(f"Environment '{ENV_TARGET} was not updated: {json.dumps(response.json(), indent=2)}")
