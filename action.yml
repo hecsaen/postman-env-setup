@@ -37,7 +37,7 @@ runs:
         import requests
 
         print("----")
-        print("os.environ")
+        print(os.environ)
         print("----")
 
         ENV_SECRET = os.getenv("POSTMAN_ENV_SECRET")
