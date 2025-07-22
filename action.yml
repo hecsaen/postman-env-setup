@@ -36,6 +36,10 @@ runs:
         import os
         import requests
 
+        print("----")
+        print("os.environ")
+        print("----")
+
         ENV_SECRET = os.getenv("POSTMAN_ENV_SECRET")
         ENV_PUBLIC = os.getenv("POSTMAN_ENV_PUBLIC")
         ENV_TARGET = os.getenv("POSTMAN_ENV_TARGET")
