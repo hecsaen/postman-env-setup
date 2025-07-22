@@ -32,6 +32,9 @@ runs:
       run: pwd
       shell: bash
 
+    - name: Print 
+      run: ls /home/runner/work/
+
     - name: Run script
       working-directory: ./
       env:
