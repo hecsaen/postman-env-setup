@@ -79,6 +79,8 @@ runs:
         if 200 == response.status_code:
             print(f"Environment '{env_target['environment']['name']}' updated successfully.")
         else:
-            raise Exception(f"Environment was not updated: {json.dumps(response.json(), indent=2)}")
+            message = f"Environment was not updated: {json.dumps(response.json(), indent=2)}"
+            print(message)
+            raise Exception(message)
       shell: python
 
