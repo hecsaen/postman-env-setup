@@ -76,4 +76,5 @@ runs:
             print(f"Environment '{env_target['environment']['name']}' updated successfully.")
         else:
             raise Exception(f"Environment was not updated: {json.dumps(response.json(), indent=2)}")
+      shell: python
 
