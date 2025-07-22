@@ -38,9 +38,12 @@ runs:
 
     - name: Print 
       run: |
+        echo $GITHUB_WORKSPACE
+        ls -R $GITHUB_WORKSPACE
+        ls /home/runner/work/_actions
         ls /home/runner/work/
-        ls -R /home/runner/work/_actions
       shell: bash
+
 
     - name: Run script
       # working-directory: ./
