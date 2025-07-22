@@ -27,7 +27,7 @@ runs:
     - name: Run script
       # working-directory: ./
       env:
-        POSTMAN_APIKEY: ${{ secrets.POSTMAN_APIKEY }}
+        #POSTMAN_API_KEY: ${{ inputs.POSTMAN_API_KEY }}
         POSTMAN_ENV_PUBLIC: ${{ inputs.public_environment }}
         POSTMAN_ENV_SECRET: ${{ inputs.secret_environment }}
         POSTMAN_ENV_TARGET: ${{ inputs.target_environment }}
