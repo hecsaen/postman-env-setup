@@ -10,7 +10,7 @@ API_KEY = os.getenv("POSTMAN_APIKEY")
 HEADERS={"X-API-Key": API_KEY}
 
 def get_environment(environment_id):
-    response = requests.get(f"https://api.getpostman.com/environments/{environment_id}d", headers=HEADERS)
+    response = requests.get(f"https://api.getpostman.com/environments/{environment_id}", headers=HEADERS)
     if response.status_code != 200:
         raise Exception(f"Environment {environment_id} could not be retrieved: {json.dumps(response.json(), indent=2)}")
     return response.json()
