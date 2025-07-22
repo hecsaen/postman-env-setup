@@ -11,7 +11,5 @@ COPY . .
 RUN pip install --upgrade pip && \
     pip install requests
 
-RUN ls
-
 # Specify the entry point for the action
 ENTRYPOINT ["python", "src/action.py"]
