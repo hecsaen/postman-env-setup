@@ -34,6 +34,7 @@ runs:
 
     - name: Print 
       run: ls /home/runner/work/
+      shell: bash
 
     - name: Run script
       working-directory: ./
