@@ -14,7 +14,9 @@ print(os.en)
 def get_environment(environment_id):
     response = requests.get(f"https://api.getpostman.com/environments/{environment_id}", headers=HEADERS)
     if response.status_code != 200:
-        raise Exception(f"Environment {environment_id} could not be retrieved: {json.dumps(response.json(), indent=2)}")
+        message = f"Environment {environment_id} could not be retrieved: {json.dumps(response.json(), indent=2)}"
+        print(message)
+        raise Exception(message)
     return response.json()
     
 
