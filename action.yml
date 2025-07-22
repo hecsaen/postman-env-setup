@@ -49,5 +49,7 @@ runs:
         POSTMAN_ENV_PUBLIC: ${{ inputs.public_environment }}
         POSTMAN_ENV_SECRET: ${{ inputs.secret_environment }}
         POSTMAN_ENV_TARGET: ${{ inputs.target_environment }}
-      run: python src/action.py 
+      run: |
+        echo $GITHUB_ACTION
+        python src/action.py 
       shell: bash
