@@ -27,7 +27,7 @@ runs:
     - name: Run script
       # working-directory: ./
       env:
-        POSTMAN_API_KEY: ${{ inputs.POSTMAN_API_KEY }}
+        POSTMAN_APIKEY: ${{ inputs.POSTMAN_APIKEY }}
         POSTMAN_ENV_PUBLIC: ${{ inputs.public_environment }}
         POSTMAN_ENV_SECRET: ${{ inputs.secret_environment }}
         POSTMAN_ENV_TARGET: ${{ inputs.target_environment }}
@@ -40,8 +40,8 @@ runs:
         print(os.environ)
         print("----")
 
-        ENV_SECRET = os.getenv("POSTMAN_ENV_SECRET")
         ENV_PUBLIC = os.getenv("POSTMAN_ENV_PUBLIC")
+        ENV_SECRET = os.getenv("POSTMAN_ENV_SECRET")
         ENV_TARGET = os.getenv("POSTMAN_ENV_TARGET")
 
         API_KEY = os.getenv("POSTMAN_APIKEY")
