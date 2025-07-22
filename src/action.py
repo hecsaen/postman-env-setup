@@ -3,9 +3,13 @@ import json
 import os
 import requests
 
-ENV_SECRET = os.getenv("POSTMAN_ENV_SECRET")
-ENV_PUBLIC = os.getenv("POSTMAN_ENV_PUBLIC")
-ENV_TARGET = os.getenv("POSTMAN_ENV_TARGET")
+print("====== PRINTING ALL ENV VARS ======")
+print(os.environ)
+print("===================================")
+
+ENV_SECRET = os.getenv("INPUT_SECRET_ENVIRONMENT")
+ENV_PUBLIC = os.getenv("INPUT_PUBLIC_ENVIRONMENT")
+ENV_TARGET = os.getenv("INPUT_TARGET_ENVIRONMENT")
 
 API_KEY = os.getenv("POSTMAN_APIKEY")
 HEADERS={"X-API-Key": API_KEY}
